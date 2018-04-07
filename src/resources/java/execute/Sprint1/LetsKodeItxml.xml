@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Grid Test">
+
+	<listeners>
+		<listener class-name="Listeners.ExtentReporterNG" />
+	</listeners>
+
+	<parameter name="useCloudEnv" value="false" />
+	<parameter name="cloudEnvName" value="browserstack" />
+	<parameter name="useGrid" value="false" />
+	<parameter name="platform" value="mac" />
+	<parameter name="os" value="Mac" />
+	<parameter name="os_version" value="Sierra" />
+	<parameter name="browserName" value="chrome" />
+	<parameter name="browserVersion" value="65.0" />
+	<parameter name="url" value="https://letskodeit.teachable.com/p/practice" />
+
+
+	<test name="Regression">
+
+		<groups>
+
+			<define name="Test Types">
+				<include name="Smoke" />
+				<include name="P1" />
+				<include name="P2" />
+				<include name="Regression" />
+				<include name="Sanity" />
+				<include name="DontRun" />
+
+			</define>
+			<run>
+				<include name="P1" />
+				<include name="P2" />
+
+			</run>
+		</groups>
+
+
+
+		<classes>
+			<class name="sprint1.LetsCodeIt_practiceSite"></class>
+		</classes>
+	</test>
+
+
+</suite>

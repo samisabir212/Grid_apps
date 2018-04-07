@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Grid Test">
+
+	<listeners> <listener class-name="utilMaster.ExtentReporterNG" /> 
+		</listeners> 
+
+	<parameter name="useCloudEnv" value="true" />
+	<parameter name="cloudEnvName" value="saucelabs" />
+	<parameter name="useGrid" value="false" />
+	<parameter name="platform" value="mac" />
+	<parameter name="os" value="Mac" />
+	<parameter name="os_version" value="Sierra" />
+	<parameter name="browserName" value="chrome" />
+	<parameter name="browserVersion" value="55.0" />
+	<parameter name="url" value="https://www.FreeCrm.com/" />
+
+
+	<test name="Regression">
+
+	<groups>
+		
+			<define name="Test Types">
+				<include name="Smoke" />
+				<include name="P1" />
+				<include name="Reg" />
+			</define>
+			<run>
+				<include name="P1"/>
+			</run>
+		</groups>
+
+
+
+		<classes>
+			
+		</classes>
+	</test>
+
+
+</suite>
+

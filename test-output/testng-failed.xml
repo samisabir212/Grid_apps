@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Grid Test]">
+  <parameter name="useCloudEnv" value="false"/>
+  <parameter name="os" value="Mac"/>
+  <parameter name="os_version" value="Sierra"/>
+  <parameter name="browserVersion" value="55.0"/>
+  <parameter name="browserName" value="chrome"/>
+  <parameter name="cloudEnvName" value="browserstack"/>
+  <parameter name="useGrid" value="false"/>
+  <parameter name="platform" value="mac"/>
+  <parameter name="url" value="https://letskodeit.teachable.com/p/practice"/>
+  <listeners>
+    <listener class-name="Listeners.ExtentReporterNG"/>
+  </listeners>
+  <test name="Regression(failed)">
+    <groups>
+      <run>
+        <include name="P1"/>
+        <include name="P2"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="sprint1.LetsCodeIt_practiceSite">
+        <methods>
+          <include name="switchToIframe"/>
+          <include name="setUp"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- sprint1.LetsCodeIt_practiceSite -->
+    </classes>
+  </test> <!-- Regression(failed) -->
+</suite> <!-- Failed suite [Grid Test] -->
